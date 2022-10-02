@@ -1,4 +1,4 @@
-const {Engine, Render, Runner, World, Bodies} = Matter;// It is for using Matter.js library
+const {Engine, Render, Runner, World, Bodies, MouseConstraint, Mouse} = Matter;// It is for using Matter.js library
 
 const engine = Engine.create();
 const {world} = engine;
@@ -13,6 +13,10 @@ const render = Render.create({//It will not destroy the body element, instead it
 
 Render.run(render);
 Runner.run(Runner.create(), engine);
+
+World.add(world, MouseConstraint.create(engine, {
+    mouse: Mouse.create(render.canvas),
+}));
 
 // Walls
 const walls = [
