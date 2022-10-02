@@ -9,3 +9,10 @@ First thing I try is understanding the Matter.js library. To do so, I create a b
 
 
 Now the box is not dissappearing from the screen.
+
+However, I cannot interact the object with mouse. I added 'Mouse' and 'MouseConstraints' properties to do that.
+
+![Screenshot_281](https://user-images.githubusercontent.com/51987890/193449869-92ddf7d2-93aa-4a69-9a6c-fe5516673a47.png)
+
+Using 'MouseConstraints' allowed me to interact with object which is not 'isStatic: true'. 
+
