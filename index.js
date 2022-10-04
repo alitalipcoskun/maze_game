@@ -1,8 +1,11 @@
 const {Engine, Render, Runner, World, Bodies} = Matter;// It is for using Matter.js library
 //for reading purposes
-const cells = 3;
+const cells = 5;
 const width = 600;
 const height = 600;
+
+const unitWidth = width/cells;
+const unitHeight = height/cells;
 
 
 const engine = Engine.create();
@@ -11,7 +14,7 @@ const render = Render.create({//It will not destroy the body element, instead it
     element: document.body,
     engine: engine,
     options: {
-        wireframes: true,
+        wireframes: false,
         width,
         height,
     }
@@ -104,10 +107,46 @@ const stepThroughCell = (row,column) => {
     }
     stepThroughCell(nextRow, nextColumn);
     }
-    //Visit next cell
+    
 };
 
 
-stepThroughCell(1,1);
+stepThroughCell(startRow,startColumn);
+
+horizontals.forEach((row, rowIndex) => {
+    row.forEach((open, columnIndex) => {
+        if(open){
+            return;
+        }
+        const wall = Bodies.rectangle(
+            columnIndex * unitWidth + unitWidth/2,
+            rowIndex * unitHeight + unitHeight,
+            unitWidth,
+            10,
+            {
+                isStatic: true,
+            }
+        );
+        World.add(world, wall);
+    });
+});
+
+verticals.forEach((row, rowIndex) => {
+    row.forEach((open, columnIndex) => {
+        if(open){
+            return;
+        }
+        const wall = Bodies.rectangle(
+            columnIndex * unitWidth + unitWidth,
+            rowIndex * unitHeight + unitHeight/2,
+            10,
+            unitHeight,
+            {
+                isStatic: true,
+            }
+        )
+        World.add(world, wall);
+    });
+});
 
 
