@@ -1,8 +1,9 @@
 const {Engine, Render, Runner, World, Bodies} = Matter;// It is for using Matter.js library
 //for reading purposes
-const cells = 5;
+const cells = 10;
 const width = 600;
 const height = 600;
+const wallSize =  10;
 
 const unitWidth = width/cells;
 const unitHeight = height/cells;
@@ -122,7 +123,7 @@ horizontals.forEach((row, rowIndex) => {
             columnIndex * unitWidth + unitWidth/2,
             rowIndex * unitHeight + unitHeight,
             unitWidth,
-            10,
+            wallSize,
             {
                 isStatic: true,
             }
@@ -139,7 +140,7 @@ verticals.forEach((row, rowIndex) => {
         const wall = Bodies.rectangle(
             columnIndex * unitWidth + unitWidth,
             rowIndex * unitHeight + unitHeight/2,
-            10,
+            wallSize,
             unitHeight,
             {
                 isStatic: true,
