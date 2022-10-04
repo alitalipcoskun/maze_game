@@ -16,3 +16,6 @@ However, I cannot interact the object with mouse. I added 'Mouse' and 'MouseCons
 
 Using 'MouseConstraints' allowed me to interact with object which is not 'isStatic: true'. Green dot represents 'force' that we use to box. I will use gravity and interaction with mouse element when the user end up finishing the maze correctly.
 
+![Screenshot_287](https://user-images.githubusercontent.com/51987890/193901577-7d8b3977-0b8c-4180-88f5-f870043bc5ba.png)
+
+With the help of maze algorithm and rendering, the app can generate randomized maze. In addition, software developer can easily edit settings.
