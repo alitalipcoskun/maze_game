@@ -19,3 +19,11 @@ Using 'MouseConstraints' allowed me to interact with object which is not 'isStat
 ![Screenshot_287](https://user-images.githubusercontent.com/51987890/193901577-7d8b3977-0b8c-4180-88f5-f870043bc5ba.png)
 
 With the help of maze algorithm and rendering, the app can generate randomized maze. In addition, software developer can easily edit settings.
+
+
+![Screenshot_289](https://user-images.githubusercontent.com/51987890/194598482-f4cb410f-b879-4bec-8145-ec14bb5ce258.png)
+
+Now, the walls are red and the ball's color is green. When the user finished the maze successfully, the maze will fall apart, and maze will tell to the user that he/she has won. Hence, I edited the gravity for the falling apart side, and hide the winning message.
+
+![Screenshot_290](https://user-images.githubusercontent.com/51987890/194598861-a370a368-989b-417d-92a0-6ff74b907c13.png)
+
