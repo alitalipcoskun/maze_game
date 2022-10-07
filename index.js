@@ -1,8 +1,8 @@
-const {Engine, Render, Runner, World, Bodies} = Matter;// It is for using Matter.js library
+const {Engine, Render, Runner, World, Bodies, Body} = Matter;// It is for using Matter.js library
 //for reading purposes
-const cells = 10;
-const width = 600;
-const height = 600;
+const cells = 15;
+const width = 800;
+const height = 800;
 const wallSize =  10;
 
 const unitWidth = width/cells;
@@ -150,4 +150,40 @@ verticals.forEach((row, rowIndex) => {
     });
 });
 
+//Goal
+const goal = Bodies.rectangle(
+    width- (unitWidth/2)-10,
+    height - (unitHeight/2)-10,
+    unitWidth * .6,
+    unitHeight * .6,
+    {
+        isStatic: true,
+    }
+);
 
+World.add(world,goal);
+
+//Ball
+const ball = Bodies.circle(
+    unitWidth/2 + 10,
+    unitHeight/2 + 10,
+    unitWidth  / 2 * 0.4,
+)
+World.add(world,ball);
+
+document.addEventListener('keydown', event => {
+    const {x, y} = ball.velocity;
+
+    if(event.key === 'w'){
+        Body.setVelocity(ball, {x, y: y -5});
+    }
+    if(event.key === 's'){
+        Body.setVelocity(ball, {x, y: y +5});
+    }
+    if(event.key === 'd'){
+        Body.setVelocity(ball, {x: x+5, y});
+    }
+    if(event.key === 'a'){
+        Body.setVelocity(ball, {x: x-5, y});
+    }
+})
